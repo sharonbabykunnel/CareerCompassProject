@@ -1,0 +1,1 @@
+import{b as a,B as e}from"./index-BfulgVQ3.js";const s=a.create({baseURL:`${e}/admin`,withCredentials:!0,methods:["GET","POST","PATCH","DELETE","OPTIONS"],headers:{"Content-Type":"application/json"}});export{s as a};

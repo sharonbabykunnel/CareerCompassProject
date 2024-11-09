@@ -1,0 +1,7 @@
+
+node_modules
+front/node_modules
+.env
+front/.env
+careercompass-a9b5b-firebase-adminsdk-ea5wo-d79393704c.json
+front/.gitignore

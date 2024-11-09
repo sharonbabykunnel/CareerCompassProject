@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    @keyframes waveAnimation {
+      0% {
+        mask-position: 0% 0%;
+      }
+      100% {
+        mask-position: 100% 0%;
+      }
+    }
+  }
