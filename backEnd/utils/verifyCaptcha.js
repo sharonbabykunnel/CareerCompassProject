@@ -6,8 +6,8 @@ const verifyCaptcha = async (captcha) => {
       {
         event: {
           token: captcha,
-          expectedAction: "USER_ACTION",
-          siteKey: "6LfL6f8pAAAAAEYFzYQJUXL3k8Qw7xYUvyTJjtd5",
+          expectedAction: process.env.RECAPTCHA_ACTION,
+          siteKey: process.env.RECAPTCHA_SECRET,
         },
       }
     );
