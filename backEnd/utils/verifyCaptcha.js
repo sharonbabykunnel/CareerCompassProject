@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const verifyCaptcha = async (captcha) => {
     return await axios.post(
-      `https://recaptchaenterprise.googleapis.com/v1/projects/careercompass-1719237393279/assessments?key=AIzaSyDS9Z3s_qVRfFPJVg4vX7F8hIrtIwXuMmA`,
+      process.env.RECAPTCHA_URL,
       {
         event: {
           token: captcha,
