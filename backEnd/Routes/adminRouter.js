@@ -9,13 +9,13 @@ route.post('/auth/logout', admin.logout);
 route.get("/getAllUsers/:current", admin.getAllUsers);
 route.get("/post/get/user/:uid", admin.getUser);
 route.get("/user/associated/:user", admin.getAssociated);
-route.get('/getAllPosts/:current', admin.getAllPosts);
 route.post("/user/block/:user", admin.blockUser);
 route.post("/user/unblock/:user", admin.unblockUser);
 
-route.post('/post/block/:uid', admin.blockPost);
-route.post('/post/unblock/:uid', admin.unblockPost)
+route.get('/getAllPosts/:current', admin.getAllPosts);
 route.get('/post/get/:uid', admin.getPostDetails);
+route.patch('/posts/:uid/block', admin.blockPost);
+route.patch('/posts/:uid/unblock', admin.unblockPost)
 
 route.get("/charts/users", admin.getChartData);
 route.get("/charts/posts", admin.getPostChartData);
