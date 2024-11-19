@@ -3,9 +3,9 @@ import education from './../Controllers/educationController.js'
 
 const router = express.Router();
 
-router.post('/add/:user', education.addEducation);
-router.get("/get/:user", education.getEducation);
-router.delete('/delete/:id', education.deleteEducation)
-router.put('/edit/:id', education.editEducation);
+router.post('/:user', education.addEducation);
+router.get("/:user", education.getEducation);
+router.delete('/:id', education.deleteEducation)
+router.put('/:id', education.editEducation);
 
 export default router;

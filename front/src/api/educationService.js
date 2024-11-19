@@ -8,7 +8,7 @@ const defaultHeaders = {
 
 export const deleteEducation = async (id) => {
   try {
-    const res = await api.delete(`/education/delete/${id}`, {
+    const res = await api.delete(`/education/${id}`, {
       withCredentials: true,
     });
 
@@ -21,7 +21,7 @@ export const deleteEducation = async (id) => {
 export const editEducation = async (selectedEducationId,  values) => {
   try {
     let res = await api.patch(
-      `/education/edit/${selectedEducationId}`,
+      `/education/${selectedEducationId}`,
       values,
       { headers: defaultHeaders }
     );
@@ -34,7 +34,7 @@ export const editEducation = async (selectedEducationId,  values) => {
 export const addEducation = async (userId, values) => {
   try {
     const res = await api.post(
-      `/education/add/${userId}`,
+      `/education/${userId}`,
       values,
       { headers: defaultHeaders }
     );
@@ -46,7 +46,7 @@ export const addEducation = async (userId, values) => {
 
 export const getEducation = async (user) => {
   try {
-    const res = await api.get(`/education/get/${user}`, {
+    const res = await api.get(`/education/${user}`, {
       withCredentials: true,
     });
     return res;
