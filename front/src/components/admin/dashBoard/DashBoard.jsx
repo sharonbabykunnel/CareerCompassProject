@@ -13,7 +13,7 @@ const DashBoard = () => {
     chart()
   },[])
   const chart =async ()=>{
-    const response = await adminApi.get('/get/user/chart');
+    const response = await adminApi.get('/charts/users');
     setData(response.data)
     setWho('Users')
     setAvg(Math.round(average(response.data)))
@@ -32,7 +32,7 @@ const DashBoard = () => {
     return total / givenData.length;
   }
   const hanldePost = async ()=>{
-    const response = await adminApi.get(`/get/post/chart`);
+    const response = await adminApi.get(`/charts/posts`);
     setData(response.data)
     setAvg(Math.round(average(response.data)))
     setWho('Posts');
@@ -40,7 +40,7 @@ const DashBoard = () => {
     setTotal(findTotal(response.data));
   }
   const hanldeJob =async ()=>{
-    const response = await adminApi.get(`/get/job/chart`);
+    const response = await adminApi.get(`/charts/jobs`);
     setData(response.data);
     setAvg(Math.round(average(response.data)))
     setWho('Jobs');

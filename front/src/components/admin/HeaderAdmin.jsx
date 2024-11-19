@@ -14,7 +14,7 @@ const HeaderAdmin = () => {
 
     const logoutAdmin  = async()=>{
         try {
-            await adminApi.post('/logout');
+            await adminApi.post('/auth/logout');
             dispatch(removeAdmin())
             navigate('/admin/login');
         } catch (error) {

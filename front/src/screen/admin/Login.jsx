@@ -23,7 +23,7 @@ const Login = () => {
       try {
         const result = await signInWithPopup(auth, provider)
         const {displayName, email, emailVerified, photoURL, uid} = result.user;
-        const response = await api.post(`/admin/googleLogin`,{
+        const response = await api.post(`/admin/auth/google`,{
           displayName, email, emailVerified, photoURL, uid
         })
         if(response?.data){
@@ -58,7 +58,7 @@ const Login = () => {
       validationSchema,
       onSubmit: async (values, { setSubmitting }) => {
         try {
-          const result = await axios.post(`${BASE_URL}/admin/login`, values);
+          const result = await axios.post(`${BASE_URL}/admin/auth/login`, values);
           if (result.status === 200) {
             dispatch(setAdmin({ ...result.data }));
             navigate('/admin');

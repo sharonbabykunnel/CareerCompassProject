@@ -2,9 +2,9 @@ import express from 'express';
 import profile from './../Controllers/profileController.js';
 const router = express.Router();
 
-router.post('/resume/add/:user', profile.uploadResume);
-router.delete('/resume/delete/:id', profile.deleteResume);
-router.get('/resume/get/:user', profile.getResume);
+router.post('/resume/:user', profile.uploadResume);
+router.delete('/resume/:id', profile.deleteResume);
+router.get('/resume/:user', profile.getResume);
 router.post('/experience/post/:id', profile.postExperience);
 router.get('/experience/get/:user', profile.getExperience);
 router.delete('/experience/delete/:id', profile.deleteExperience);

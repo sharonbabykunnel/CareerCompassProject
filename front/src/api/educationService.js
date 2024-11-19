@@ -59,7 +59,7 @@ export const getEducation = async (user) => {
 export const uploadResume = async (userId, resumeUrl) => {
   try {
     const res = await api.post(
-      `/profile/resume/add/${userId}`,
+      `/profile/resume/${userId}`,
       { resume: resumeUrl },
       {
         withCredentials: true,
@@ -74,7 +74,7 @@ export const uploadResume = async (userId, resumeUrl) => {
 
 export const deleteUserResume = async (id) => {
     try {
-        const res = await api.delete(`/profile/resume/delete/${id}`)
+        const res = await api.delete(`/profile/resume/${id}`)
         return res;
     } catch (error) {
         Failed(error.response ? error.response.message : error.message);
