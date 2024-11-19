@@ -27,14 +27,18 @@ fetchUser();
 
   const handleBlockPost = async () => {
     const response = await adminApi.patch(`/post/${post.uid}/block`);
+    if(response){
     setIsBlocked(true)
     Success('Post Blocked')
+    }
   };
 
   const handleUbBlockPost = async () => {
     const response = await adminApi.patch(`/post/${post.uid}/unblock`);
+    if(response.data){
     setIsBlocked(false)
     Success('Post UnBlocked')
+    }
   };
 
   const renderContent = () => {
