@@ -9,7 +9,7 @@ const defaultHeaders = {
 export const postExperience = async (user,values) => {
     try {
         const res = await api.post(
-          `/profile/experience/post/${user}`,
+          `/profile/experience/${user}`,
           values,
             { headers: defaultHeaders }
         );
@@ -22,7 +22,7 @@ export const postExperience = async (user,values) => {
 
 export const getExperience = async (user) => {
     try {
-        const res = await api.get(`/profile/experience/get/${user}`, {}, {
+        const res = await api.get(`/profile/experience/${user}`, {}, {
             headers:defaultHeaders
         })
         return res
@@ -33,7 +33,7 @@ export const getExperience = async (user) => {
 
 export const deleteExperience = async (id) => {
     try {
-        const res = await api.delete(`/profile/experience/delete/${id}`)
+        const res = await api.delete(`/profile/experience/${id}`)
         return res
     } catch (error) {
         Failed(error.response ? error.response.message : error.message)
@@ -43,7 +43,7 @@ export const deleteExperience = async (id) => {
 export const editExperience = async (id,user,values) => {
     try {
         values.user = user
-        const res = await api.put(`/profile/experience/update/${id}`, values , {
+        const res = await api.put(`/profile/experience/${id}`, values , {
             headers:defaultHeaders
         })
         return res;
