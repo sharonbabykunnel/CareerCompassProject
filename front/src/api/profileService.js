@@ -17,7 +17,6 @@ export const postExperience = async (user,values) => {
     } catch (error) {
         Failed(error.response ? error.response.message : error.message);
     }
-
 }
 
 export const getExperience = async (user) => {

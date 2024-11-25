@@ -16,7 +16,7 @@ const sendOtp = async (email, otp) => {
       from: config.user,
       to: email,
       subject: "Verify your Signup",
-      text: `your otp id ${otp}`,
+      text: `your otp is ${otp}`,
     };
     transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
