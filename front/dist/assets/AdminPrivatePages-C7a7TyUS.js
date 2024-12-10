@@ -1,1 +1,0 @@
-import{u as o,j as e}from"./index-BfulgVQ3.js";import{O as s,N as m}from"./vendor-DoS0LqYF.js";import"./chart-Bxe9v4kL.js";const u=()=>o(i=>{var r;return(r=i==null?void 0:i.presisted)==null?void 0:r.admin})?e.jsx(s,{}):e.jsx(m,{to:"/admin/login"});export{u as default};

@@ -23,7 +23,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(fileUpload());
 app.use(
   cors({
-    origin: config.origin,
+    origin: '*',
     credentials: true,
     methods: ["GET", "POST", "PATCH", "DELETE", "OPTIONS", "PUT"],
   })
