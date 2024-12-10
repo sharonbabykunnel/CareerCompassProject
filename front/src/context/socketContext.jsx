@@ -22,7 +22,7 @@ export const SocketContext = ({children}) => {
     const [onlineUsers, setOnlineUsers] = useState([])
     useEffect(()=>{
         if(user){
-            const newSocket = io(process.env.VITE_BASE_URL, {
+            const newSocket = io(import.meta.env.VITE_BASE_URL, {
                 transports: ['polling', 'websocket'], 
                 upgrade: false 
             });

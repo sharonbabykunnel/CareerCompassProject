@@ -29,7 +29,8 @@ const SignIn = () => {
         navigate('/home');
       }
     } catch (error) {
-      // toast.error(error.response ? error.response.data.message : error.message)
+      console.log(error)
+      toast.error(error.response ? error.response.data.message : error.message)
     }
   };
 

@@ -187,14 +187,32 @@ const MainBody = () => {
   })
 
   return (
-    <div className=' col-start-2 col-end-4  m-10 rounded-xl  '>
-        <AddPost user={user} updateQuerryCache={updateQuerryCache}/>
-        {data?.pages?.map((page,pindex) => page?.map((post,index)=>
-        <Content key={post?._id} post={post} user={post.user} userDetails={user} currentUserId={user.uid} index={index} pindex={pindex} updateQuerryLike={updateQuerryLike} updateQueryComment={updateQueryComment}
-        updateQuerrySave={updateQuerrySave} updateCommentReplay={updateCommentReplay} updatePostList={updatePostList} updatePostCommentLike={updatePostCommentLike} />))}
-        {isFetchingNextPage && (<div>loading</div>)}
+    <div className="col-start-2 col-end-4 m-10 rounded-xl">
+      <AddPost user={user} updateQuerryCache={updateQuerryCache} />
+      {data?.pages?.map((page, pindex) =>
+        Array.isArray(page) && page.length > 0
+          ? page.map((post, index) => (
+              <Content
+                key={post?._id}
+                post={post}
+                user={post.user}
+                userDetails={user}
+                currentUserId={user.uid}
+                index={index}
+                pindex={pindex}
+                updateQuerryLike={updateQuerryLike}
+                updateQueryComment={updateQueryComment}
+                updateQuerrySave={updateQuerrySave}
+                updateCommentReplay={updateCommentReplay}
+                updatePostList={updatePostList}
+                updatePostCommentLike={updatePostCommentLike}
+              />
+            ))
+          : null
+      )}
+      {isFetchingNextPage && <div>Loading...</div>}
     </div>
-  )
-}
+  );
+}  
 
 export default MainBody

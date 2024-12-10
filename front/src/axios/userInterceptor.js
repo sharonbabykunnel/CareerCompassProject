@@ -1,9 +1,10 @@
 import axios from "axios";
-import { BASE_URL } from "../../const/url";
 import { Failed } from "../helpers/popup";
 
+const BASE_URL = import.meta.env.VITE_BASE_URL;
+
 const api = axios.create({
-  baseURL: BASE_URL,
+  baseURL: `${BASE_URL}/api`,
   withCredentials: true,
   methods: ["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
   headers: {
