@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+import tailwindScrollbarHide from "tailwind-scrollbar-hide";
+
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
@@ -18,12 +20,12 @@ export default {
         },
       },
       iconflicker: {
-          '0%, 10%, 30%, 100%': { opacity: '1' },
-          '5%, 25%': { opacity: '0.2' }
-        },
+        "0%, 10%, 30%, 100%": { opacity: "1" },
+        "5%, 25%": { opacity: "0.2" },
+      },
       animation: {
-        flicker: 'flicker 2s linear infinite',
-        iconflicker: 'iconflicker 2s linear infinite',
+        flicker: "flicker 2s linear infinite",
+        iconflicker: "iconflicker 2s linear infinite",
         wave: "waveAnimation var(--wave-animation-duration) linear infinite",
       },
       keyframes: {
@@ -57,5 +59,5 @@ export default {
       },
     },
   },
-  plugins: [require("tailwind-scrollbar-hide")],
+  plugins: [tailwindScrollbarHide],
 };
