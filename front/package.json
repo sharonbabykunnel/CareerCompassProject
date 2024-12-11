@@ -16,6 +16,7 @@
     "axios": "^1.7.2",
     "emoji-picker-react": "^4.11.1",
     "firebase": "^10.12.2",
+    "formik": "^2.4.6",
     "lodash": "^4.17.21",
     "lucide-react": "^0.411.0",
     "react": "^18.2.0",
@@ -33,7 +34,8 @@
     "recharts": "^2.12.7",
     "redux-persist": "^6.0.0",
     "socket.io-client": "^4.7.5",
-    "tailwind-scrollbar-hide": "^1.1.7"
+    "tailwind-scrollbar-hide": "^1.1.7",
+    "yup": "^1.5.0"
   },
   "devDependencies": {
     "@shadcn/ui": "^0.0.4",
