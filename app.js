@@ -33,31 +33,35 @@ const peerServer = ExpressPeerServer(server, { debug: true });
 app.use("/api", routes);
 app.use("/peerjs", peerServer);
 
-// Serve assets with correct MIME types
-app.use(
-  "/assets",
-  express.static(path.join(__dirname, "front", "dist", "assets"), {
-    setHeaders: (res, path) => {
-      if (path.endsWith(".js")) {
-        res.setHeader("Content-Type", "application/javascript");
-      } else if (path.endsWith(".css")) {
-        res.setHeader("Content-Type", "text/css");
-      }
-    },
-  })
-);
+// Serve module scripts with the correct MIME type
+app.use("/assets", express.static(path.join(__dirname, "front", "dist", "assets"), {
+  setHeaders: (res, path) => {
+    if (path.endsWith(".js")) {
+      res.setHeader("Content-Type", "application/javascript");
+    } else if (path.endsWith(".css")) {
+      res.setHeader("Content-Type", "text/css");
+    }
+  },
+}));
 
 // Serve other static files
-app.use(
-  express.static(path.join(__dirname, "front", "dist"), {
-    setHeaders: (res, path) => {
-      if (path.endsWith(".js")) {
-        res.setHeader("Content-Type", "application/javascript");
-      }
-    },
-  })
-);
-app.get("*", (req, res) => {
+app.use(express.static(path.join(__dirname, "front", "dist"), {
+  setHeaders: (res, path) => {
+    if (path.endsWith(".js")) {
+      res.setHeader("Content-Type", "application/javascript");
+    }
+  },
+}));
+// Only serve index.html for routes that don't match existing files
+app.get('*', (req, res) => {
+  // Check if the request is for a file that should exist
+  const filePath = path.resolve(__dirname, "front", "dist", req.path.substring(1));
+  
+  if (fs.existsSync(filePath)) {
+    return res.sendFile(filePath);
+  }
+  
+  // Otherwise, serve the index.html for client-side routing
   res.sendFile(path.resolve(__dirname, "front", "dist", "index.html"));
 });
 
