@@ -1,1 +1,0 @@
-import{u as r,j as e}from"./index-BCbUohwl.js";import{N as t,O as o}from"./vendor-DoS0LqYF.js";import"./chart-Bxe9v4kL.js";const p=()=>r(s=>s.presisted.user)?e.jsx(t,{to:"/home",replace:!0}):e.jsx(o,{});export{p as default};

@@ -1,1 +1,0 @@
-import{b as a}from"./index-BCbUohwl.js";import{B as e}from"./url-C7Fa9dY1.js";const i=a.create({baseURL:`${e}/admin`,withCredentials:!0,methods:["GET","POST","PATCH","DELETE","OPTIONS"],headers:{"Content-Type":"application/json"}});export{i as a};
