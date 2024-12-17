@@ -25,10 +25,8 @@ app.use(
   cors({
     origin: '*',
     credentials: true,
-    methods: ["GET", "POST", "PATCH", "DELETE", "OPTIONS", "PUT"],
   })
 );
-app.options('*', cors());
 const peerServer = ExpressPeerServer(server, { debug: true });
 app.use('/api', routes);
 app.use("/peerjs", peerServer);
