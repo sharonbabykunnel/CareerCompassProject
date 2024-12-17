@@ -15,8 +15,8 @@ dotenv.config();
 
 const app = express();
 const server = http.createServer(app);
-const __dirname = path.resolve()
-
+const __dirname = path.dirname("")
+console.log(__dirname)
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -30,40 +30,11 @@ app.use(
 );
 app.options('*', cors());
 const peerServer = ExpressPeerServer(server, { debug: true });
-app.use("/api", routes);
+app.use('/api', routes);
 app.use("/peerjs", peerServer);
-
-// Serve module scripts with the correct MIME type
-app.use("/assets", express.static(path.join(__dirname, "front", "dist", "assets"), {
-  setHeaders: (res, path) => {
-    if (path.endsWith(".js")) {
-      res.setHeader("Content-Type", "application/javascript");
-    } else if (path.endsWith(".css")) {
-      res.setHeader("Content-Type", "text/css");
-    }
-  },
-}));
-
-// Serve other static files
-app.use(express.static(path.join(__dirname, "front", "dist"), {
-  setHeaders: (res, path) => {
-    if (path.endsWith(".js")) {
-      res.setHeader("Content-Type", "application/javascript");
-    }
-  },
-}));
-// Only serve index.html for routes that don't match existing files
-app.get('*', (req, res) => {
-  // Check if the request is for a file that should exist
-  const filePath = path.resolve(__dirname, "front", "dist", req.path.substring(1));
-  
-  if (fs.existsSync(filePath)) {
-    return res.sendFile(filePath);
-  }
-  
-  // Otherwise, serve the index.html for client-side routing
-  res.sendFile(path.resolve(__dirname, "front", "dist", "index.html"));
-});
+const buildPath = path.join(__dirname, "./front/dist");
+console.log(buildPath)
+app.use(express.static(buildPath));
 
 setupSocket(server);
 
