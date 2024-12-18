@@ -2,13 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-    @keyframes waveAnimation {
-      0% {
-        mask-position: 0% 0%;
-      }
-      100% {
-        mask-position: 100% 0%;
-      }
-    }
+@layer base {
+  /* Example: Set a default font family */
+  body {
+    @apply bg-white text-gray-900 font-sans;
   }
+
+  /* Example: Default styles for headings */
+  h1 {
+    @apply text-3xl font-bold;
+  }
+
+  h2 {
+    @apply text-2xl font-semibold;
+  }
+
+  h3 {
+    @apply text-xl font-medium;
+  }
+
+  /* Example: Add padding to paragraphs */
+  p {
+    @apply mb-4;
+  }
+}
