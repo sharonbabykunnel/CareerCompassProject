@@ -12,7 +12,7 @@ const ConnectionScreen = lazy(() => import('./screen/ConnectionScreen.jsx'));
 const GroupScreen = lazy(() => import('./screen/GroupScreen.jsx'));
 const Connections = lazy(() => import('./components/Connections/Connections.jsx'))
 const Requests = lazy(() => import('./components/Connections/Requests.jsx'))
-const WorldWilld = lazy(() => import('./components/Connections/WorldWild.jsx'))
+const WorldWilde = lazy(() => import('./components/Connections/WorldWide.jsx'))
 const Invitations = lazy(() => import('./components/Connections/Invitatiosn.jsx'))
 const Mutuals = lazy(() => import('./components/Connections/Mutuals.jsx'))
 const Educations = lazy(() => import('./components/profile/EducationSection.jsx'))
@@ -59,7 +59,7 @@ const UserRoutes = (
             <Route path='invitations'  element={<Invitations/>}/>
             <Route path='request'  element={<Requests/>}/>
             <Route path='mutuals'  element={<Mutuals/>}/>
-            <Route path='worldwild'  element={<WorldWilld/>}/>
+            <Route path='worldwide'  element={<WorldWilde/>}/>
     </Route>
     {/* <Route path='group' element={<GroupScreen />} /> */}
   </Route>

@@ -1,1 +1,0 @@
-import{u as n,j as s,O as r,N as a}from"./index-yZXWRwRE.js";const t=()=>n(e=>{var i;return(i=e==null?void 0:e.presisted)==null?void 0:i.admin})?s.jsx(r,{}):s.jsx(a,{to:"/admin/login"});export{t as default};

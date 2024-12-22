@@ -20,8 +20,8 @@ const connectionMenu = [
         name:'Mutuals'
     },
     {
-        path: 'worldwild',
-        name:'World Wild'
+        path: 'worldwide',
+        name:'World Wide'
     },
 ]
 
