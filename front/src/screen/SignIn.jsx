@@ -24,7 +24,6 @@ const SignIn = () => {
       },{withCredentials: true})
 
       if(response?.data){
-        console.log(response.data)
         localStorage.setItem('accessToken',response.data.accessToken);
         dispatch(setCredentials({...response.data.user}))
         navigate('/home');

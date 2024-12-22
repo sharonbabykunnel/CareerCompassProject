@@ -26,13 +26,13 @@ api.interceptors.request.use(
 api.interceptors.response.use(
   (response) => response,
   async (error) => {
-    // Failed(error.response ? error.response.data.message : error.message);
+    Failed(error.response ? error.response.data.message : error.message);
     const originalRequest = error.config;
 
     if (error?.response?.status === 401 && !originalRequest._retry) {
       originalRequest._retry = true;
       try {
-        const response = await axios.get(`${BASE_URL}/refreshToken`, {
+        const response = await axios.get(`${BASE_URL}/api/refreshToken`, {
           withCredentials: true,
         });
         localStorage.setItem("accessToken", response.data.accessToken);
